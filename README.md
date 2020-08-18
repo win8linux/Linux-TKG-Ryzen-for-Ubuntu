@@ -6,3 +6,5 @@ Linux kernel with
 - Other optimizations for gaming.
 
 Check **Releases** to get .deb files for Ubuntu 20.04 with Headers.
+
+Don't forget to run *sudo update-initramfs -u* after installing both .deb files
