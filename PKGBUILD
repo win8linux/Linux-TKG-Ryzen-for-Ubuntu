@@ -43,7 +43,7 @@ else
 fi
 pkgname=("${pkgbase}" "${pkgbase}-headers")
 pkgver="${_basekernel}"."${_sub}"
-pkgrel=2
+pkgrel=4
 pkgdesc='Linux-tkg'
 arch=('x86_64') # no i686 in here
 url="http://www.kernel.org/"
@@ -75,13 +75,13 @@ source=("https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.x
         #0008-5.8-bcachefs.patch
         0009-glitched-ondemand-bmq.patch
         0009-glitched-bmq.patch
-        0009-prjc_v5.8-r0.patch
+        0009-prjc_v5.8-r1.patch
         0011-ZFS-fix.patch
         #0012-linux-hardened.patch
         0012-misc-additions.patch
 )
 sha256sums=('e7f75186aa0642114af8f19d99559937300ca27acaf7451b36d4f9b0f85cf1f5'
-            '6f7a720d5037c69a8ae80f9c67063a1d26523ddf094411a436da4228426ee569'
+            '8a385031e4e2b514d68590b20c0e22e3daf9d97bbfacd2ba131c8ea2e3449ccd'
             '5ab29eb64e57df83b395a29a6a4f89030d142feffbfbf73b3afc6d97a2a7fd12'
             '240321e752714a4b64c2aaf15a875866f24e7b66bbbe79042e0ee73d64849c38'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
@@ -97,7 +97,7 @@ sha256sums=('e7f75186aa0642114af8f19d99559937300ca27acaf7451b36d4f9b0f85cf1f5'
             'cd225e86d72eaf6c31ef3d7b20df397f4cc44ddd04389850691292cdf292b204'
             '9fad4a40449e09522899955762c8928ae17f4cdaa16e01239fd12592e9d58177'
             '965a517a283f265a012545fbb5cc9e516efc9f6166d2aa1baf7293a32a1086b7'
-            'aa02d8dc476093eec104020bca4e47b0684381f3aa7d3caeb50c6b195c19a02f'
+            '1656a20d3bab28c72e004778f77e880bba8d02eba8d18a81558cdc9d6733b1f1'
             '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
             '98311deeb474b39e821cd1e64198793d5c4d797155b3b8bbcb1938b7f11e8d74')
 
