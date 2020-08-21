@@ -2,7 +2,7 @@
 
 _basever=58
 _basekernel=5.8
-_sub=2
+_sub=3
 
 _tkg_initscript() {
 
@@ -238,6 +238,10 @@ _tkg_srcprep() {
     if { [ "$_distro" = "Arch" ] && pacman -Qq ccache &> /dev/null; } || { [ "$_distro" = "Ubuntu" ] && dpkg -l ccache > /dev/null; }; then
       sed -i -e 's/CONFIG_GCC_PLUGINS=y/# CONFIG_GCC_PLUGINS is not set/' ./.config
     fi
+  fi
+  # Skip dbg package creation on non-Arch
+  if [ "$_distro" != "Arch" ]; then
+    sed -i -e 's/CONFIG_DEBUG_INFO.*/CONFIG_DEBUG_INFO=n/' ./.config
   fi
 
   if [ "$_font_autoselect" != "false" ]; then
@@ -800,7 +804,7 @@ _tkg_srcprep() {
   fi
   if [[ "$CONDITIONMPDB" =~ [yY] ]] || [ "$_modprobeddb" = "true" ]; then
     sudo modprobed-db recall
-    make localmodconfig
+    yes "" | make localmodconfig
   fi
 
   if [ true = "$_config_fragments" ]; then
